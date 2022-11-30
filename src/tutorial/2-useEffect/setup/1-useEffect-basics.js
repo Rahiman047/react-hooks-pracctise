@@ -3,7 +3,22 @@ import React, { useState, useEffect } from "react";
 // cleanup function
 // second parameter
 const UseEffectBasics = () => {
-  return <h2>useEffect Basics edition</h2>;
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (count >= 2) {
+      document.title = `New Messages ${count}`;
+    }
+  }, [count]);
+
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button type="button" onClick={() => setCount(count + 1)}>
+        Click here
+      </button>
+    </div>
+  );
 };
 
 export default UseEffectBasics;
