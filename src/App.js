@@ -1,10 +1,10 @@
 import React from "react";
-import UseEffectFetchData from "./tutorial/2-useEffect/setup/3-useEffect-fetch-data";
+import ShortCircuit from "./tutorial/3-conditional-rendering/setup/2-short-circuit";
 
 function App() {
   return (
     <div className="container">
-      <UseEffectFetchData />
+      <ShortCircuit />
     </div>
   );
 }
