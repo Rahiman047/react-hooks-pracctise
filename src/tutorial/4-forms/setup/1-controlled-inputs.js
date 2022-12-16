@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // JS
 // const input = document.getElementById('myText');
 // const inputValue = input.value
@@ -6,7 +6,54 @@ import React, { useState } from 'react';
 // value, onChange
 
 const ControlledInputs = () => {
-  return <h1>controlled inputs</h1>;
+  const [firstName, setFirstName] = useState("");
+  const [email, setEmail] = useState("");
+  const [people, setPeople] = useState([]);
+
+  const formSubmit = (e) => {
+    e.preventDefault();
+    if (firstName && email) {
+      const person = { firstName, email };
+      setPeople((people) => {
+        return [...people, person];
+      });
+      setFirstName("");
+      setEmail("");
+    } else {
+      console.log("Returning empty values");
+    }
+    console.log(people);
+  };
+
+  return (
+    <>
+      <article>
+        <form className="form" onSubmit={formSubmit}>
+          <div className="form-control">
+            <label htmlFor="name">Name : </label>
+            <input
+              type="text"
+              id="name"
+              name="firstName"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+          </div>
+          <div className="form-control">
+            <label htmlFor="email">Email : </label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <button type="submit">Add Person</button>
+        </form>
+      </article>
+    </>
+  );
 };
 
 export default ControlledInputs;

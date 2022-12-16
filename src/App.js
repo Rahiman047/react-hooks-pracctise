@@ -1,10 +1,10 @@
 import React from "react";
-import ShortCircuit from "./tutorial/3-conditional-rendering/setup/2-short-circuit";
+import ControlledInputs from "./tutorial/4-forms/setup/2-multiple-inputs";
 
 function App() {
   return (
     <div className="container">
-      <ShortCircuit />
+      <ControlledInputs />
     </div>
   );
 }
